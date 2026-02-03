@@ -105,19 +105,19 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
         <div className="flex flex-col items-center gap-6 py-8 px-6 text-center font-medium text-slate-700">
           <button
             onClick={() => handleNavigate("home")}
-            className="text-[#56ab2f] text-lg hover:text-[#4a9328] transition-colors cursor-pointer"
+            className={`${currentPage === "home" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
           >
             Home
           </button>
           <button
             onClick={() => handleNavigate("about")}
-            className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer"
+            className={`${currentPage === "about" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
           >
             About Us
           </button>
           <button 
             onClick={() => handleNavigate("service")}
-            className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
+            className={`${currentPage === "service" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}>
             Services
           </button>
           <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
