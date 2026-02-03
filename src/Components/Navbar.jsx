@@ -56,11 +56,10 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
         >
           About Us
         </button>
-        <button className="hover:text-[#56ab2f] cursor-pointer transition-colors">
+        <button 
+            onClick={() => handleNavigate("service")}
+        className={`${currentPage === "service" ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}>
           Services
-        </button>
-        <button className="hover:text-[#56ab2f] cursor-pointer transition-colors">
-          Pricing
         </button>
         <button className="hover:text-[#56ab2f] cursor-pointer transition-colors">
           Contact
@@ -116,7 +115,9 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
           >
             About Us
           </button>
-          <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
+          <button 
+            onClick={() => handleNavigate("service")}
+            className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
             Services
           </button>
           <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">

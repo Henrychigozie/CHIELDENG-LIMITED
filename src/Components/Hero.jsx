@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { ShieldCheck, Star, ThumbsUp, ChevronRight } from "lucide-react";
+// Added Home, Key, Utensils, and Bath to the list below
+import { 
+  ShieldCheck, 
+  Star, 
+  ThumbsUp, 
+  ChevronRight, 
+  Home, 
+  Key, 
+  Utensils, 
+  Bath 
+} from "lucide-react";
 
 import heroimage from "../assets/housewife-young-smiling-woman-with-basin-with-cleansing-appliances.jpg";
 
@@ -178,6 +188,134 @@ const Hero = ({ onNavigate = () => {} }) => {
           </div>
         </div>
       </section>
+
+      {/* SERVICE GRID INTRO */}
+{/* SERVICE GRID HOOK */}
+<section className="py-16 bg-slate-50">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center mb-12 fade-in">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#0b0642] mb-2">
+        Our Professional Services
+      </h2>
+      <p className="text-slate-500 font-medium">Click a service to explore our expertise and pricing</p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        { title: "Residential Deep Clean", icon: <Home size={24} />, deal: true },
+        { title: "End of Tenancy Clean", icon: <Key size={24} />, deal: false },
+        { title: "Kitchen Deep Clean", icon: <Utensils size={24} />, deal: false },
+        { title: "Bathroom Deep Clean", icon: <Bath size={24} />, deal: true },
+      ].map((service, idx) => (
+        <button
+          key={idx}
+          onClick={() => {
+            onNavigate("services");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="fade-in relative group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4 hover:shadow-xl hover:border-[#56ab2f30] transition-all duration-300 cursor-pointer text-left active:scale-95"
+        >
+          {/* Icon Container */}
+          <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-[#2d5a84] group-hover:bg-[#56ab2f] group-hover:text-white transition-all duration-300 shadow-inner">
+            {service.icon}
+          </div>
+
+          {/* Text */}
+          <div className="flex flex-col">
+            <span className="font-bold text-[#0b0642] text-lg group-hover:text-[#56ab2f] transition-colors">
+              {service.title}
+            </span>
+            <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider flex items-center gap-1">
+              View Details <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </div>
+
+          {/* Deal Badge (matching your image) */}
+          {service.deal && (
+            <span className="absolute -top-2 -right-2 bg-[#e91e63] text-white text-[10px] font-black px-2 py-1 rounded shadow-md italic transform rotate-3">
+              DEAL
+            </span>
+          )}
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* HOW OZED WORKS SECTION */}
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="text-center mb-16 fade-in">
+      <h2 className="text-3xl md:text-5xl font-extrabold text-[#0b0642] mb-4">
+        How Ozed Services Works
+      </h2>
+      <p className="text-slate-500 text-lg">Professional cleaning in three simple steps</p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-12 text-center">
+      {/* Step 1 */}
+      <div className="fade-in space-y-6 group">
+        <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110 duration-300 shadow-sm border border-slate-100">
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" 
+            alt="Customise" 
+            className="w-12 h-12 opacity-80"
+          />
+        </div>
+        <h3 className="text-xl font-bold text-[#0b0642]">
+          <span className="text-slate-300 mr-2 text-2xl">1.</span> Customise & Book
+        </h3>
+        <p className="text-gray-600 leading-relaxed px-4">
+          Just specify a few details, pick the date and time, we'll send the right professional.
+        </p>
+      </div>
+
+      {/* Step 2 */}
+      <div className="fade-in space-y-6 group">
+        <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110 duration-300 shadow-sm border border-slate-100">
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/2329/2329013.png" 
+            alt="Manage" 
+            className="w-12 h-12 opacity-80"
+          />
+        </div>
+        <h3 className="text-xl font-bold text-[#0b0642]">
+          <span className="text-slate-300 mr-2 text-2xl">2.</span> Easily manage everything online
+        </h3>
+        <p className="text-gray-600 leading-relaxed px-4">
+          Check prices and availability, re-schedule, re-book or cancel your service any time you like.
+        </p>
+      </div>
+
+      {/* Step 3 */}
+      <div className="fade-in space-y-6 group">
+        <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110 duration-300 shadow-sm border border-slate-100">
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/3048/3048122.png" 
+            alt="Enjoy" 
+            className="w-12 h-12 opacity-80"
+          />
+        </div>
+        <h3 className="text-xl font-bold text-[#0b0642]">
+          <span className="text-slate-300 mr-2 text-2xl">3.</span> Enjoy your newfound time!
+        </h3>
+        <p className="text-gray-600 leading-relaxed px-4">
+          Rest, work, play, live... while the professional takes care of everything.
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-16 text-center fade-in">
+      <button 
+        onClick={() => onNavigate("services")}
+        className="bg-[#e91e63] hover:bg-[#d81557] text-white px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-all active:scale-95"
+      >
+        Book a service
+      </button>
+      <p className="mt-4 text-slate-400 text-sm font-medium">Book a service in 30 seconds</p>
+    </div>
+  </div>
+</section>
     </div>
   );
 };
