@@ -121,9 +121,6 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
             Services
           </button>
           <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
-            Pricing
-          </button>
-          <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
             Contact
           </button>
 
