@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
+// We only add this import to make the links work
+import { NavLink } from "react-router-dom";
 import { Mail, Menu, X, Phone } from "lucide-react";
 
-const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
+const Navbar = ({ currentPage = "home" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const handleNavigate = (page) => {
-    setIsOpen(false);
-    onNavigate(page);
-    if (typeof window !== "undefined") window.scrollTo(0, 0);
-  };
 
   // Scroll animation
   useEffect(() => {
@@ -23,8 +19,7 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
 
   return (
     <nav
-      className=
-      {`fixed top-0 left-0 right-0 bg-white flex items-center justify-between px-4 sm:px-6 py-4 w-full mx-auto z-50 transition-all duration-500 animate-[fadeDown_.6s_ease-out]
+      className={`fixed top-0 left-0 right-0 bg-white flex items-center justify-between px-4 sm:px-6 py-4 w-full mx-auto z-50 transition-all duration-500 animate-[fadeDown_.6s_ease-out]
       ${scrolled ? "bg-white/90 backdrop-blur shadow-md" : "bg-transparent"}`}
     >
       <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
@@ -40,12 +35,13 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
 
         <div className="flex flex-col">
           <div className="flex items-center">
-            <button
-              onClick={() => handleNavigate("home")}
+            {/* Swapped button for NavLink, kept all your classes */}
+            <NavLink
+              to="/"
               className="text-[#2d5a84] font-black text-xl sm:text-2xl tracking-[calc(-0.05em)] leading-none group-hover:text-[#56ab2f] transition-colors duration-300"
             >
               OZED
-            </button>
+            </NavLink>
             <span className="w-1.5 h-1.5 bg-[#56ab2f] rounded-full ml-0.5 mt-1.5 sm:mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100" />
           </div>
 
@@ -59,36 +55,36 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
 
       {/* Desktop Nav Links */}
       <div className="hidden md:flex items-center gap-8 font-medium text-slate-600">
-        <button
-          onClick={() => handleNavigate("home")}
-          className={`${currentPage === "home" ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
+        <NavLink
+          to="/"
+          className={({ isActive }) => `${isActive ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
         >
           Home
-        </button>
+        </NavLink>
 
-        <button
-          onClick={() => handleNavigate("about")}
-          className={`${currentPage === "about" ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
+        <NavLink
+          to="/about"
+          className={({ isActive }) => `${isActive ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
         >
           About Us
-        </button>
+        </NavLink>
 
-        <button
-          onClick={() => handleNavigate("service")}
-          className={`${currentPage === "service" ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
+        <NavLink
+          to="/service"
+          className={({ isActive }) => `${isActive ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
         >
           Services
-        </button>
+        </NavLink>
 
-        <button 
-        onClick={()=> handleNavigate("contact") }
-        className={`${currentPage === "contact" ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}>
+        <NavLink 
+          to="/contact"
+          className={({ isActive }) => `${isActive ? "text-[#56ab2f] border-b-2 border-[#56ab2f]" : "hover:text-[#56ab2f]"} cursor-pointer transition-colors`}
+        >
           Contact
-        </button>
+        </NavLink>
 
         <div className="flex items-center gap-3 ml-2">
           <a
-
             href="tel:01234567890"
             className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-[#2d5a84] bg-white border border-slate-200 hover:bg-slate-50 transition"
           >
@@ -96,15 +92,15 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
             Call
           </a>
 
-          <a
-          onClick={()=> handleNavigate("contact") }
-            href="#book"
+          <NavLink
+            to="/contact"
             className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-linear-to-t from-[#2c700d] to-[#4a9328] hover:from-[#4a9328] hover:to-[#3c7a20] transition"
           >
             Book a Service
-          </a>
+          </NavLink>
         </div>
 
+        {/* KEPT YOUR EMAIL SECTION RIGHT HERE */}
         <div className="flex items-center gap-2 text-slate-400 text-sm ml-4">
           <Mail size={14} />
           <span>info@ozedcleaning.co.uk</span>
@@ -129,30 +125,37 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
         }`}
       >
         <div className="flex flex-col items-center gap-6 py-8 px-6 text-center font-medium text-slate-700">
-          <button
-            onClick={() => handleNavigate("home")}
-            className={`${currentPage === "home" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
+          <NavLink
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) => `${isActive ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
           >
             Home
-          </button>
+          </NavLink>
 
-          <button
-            onClick={() => handleNavigate("about")}
-            className={`${currentPage === "about" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
+          <NavLink
+            to="/about"
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) => `${isActive ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
           >
             About Us
-          </button>
+          </NavLink>
 
-          <button
-            onClick={() => handleNavigate("service")}
-            className={`${currentPage === "service" ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
+          <NavLink
+            to="/service"
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) => `${isActive ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
           >
             Services
-          </button>
+          </NavLink>
 
-          <button className="text-lg hover:text-[#56ab2f] transition-colors cursor-pointer">
+          <NavLink 
+            to="/contact" 
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) => `${isActive ? "text-[#56ab2f] text-lg" : "text-lg hover:text-[#56ab2f]"} transition-colors cursor-pointer`}
+          >
             Contact
-          </button>
+          </NavLink>
 
           <a
             href="tel:01234567890"
@@ -163,12 +166,13 @@ const Navbar = ({ onNavigate = () => {}, currentPage = "home" }) => {
             Call
           </a>
 
-          <button
+          <NavLink
+            to="/contact"
             onClick={() => setIsOpen(false)}
             className="w-full inline-flex justify-center items-center px-6 py-3 rounded-md bg-linear-to-t from-[#2c700d] to-[#4a9328] text-white font-semibold hover:opacity-90 transition"
           >
             Book a Service
-          </button>
+          </NavLink>
 
           <div className="flex items-center gap-3 text-slate-500 mt-4 pt-4 border-t border-slate-100 w-full justify-center">
             <Mail size={16} />

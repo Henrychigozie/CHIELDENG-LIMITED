@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
@@ -7,28 +7,20 @@ import Service from "./Components/Service.jsx";
 import ContactPage from "./Components/ContactUs.jsx";
 
 function App() {
-  // 1. Initialize state from localStorage if it exists, otherwise default to "home"
-  const [page, setPage] = useState(() => {
-    return localStorage.getItem("ozed_current_page") || "home";
-  });
-
-  // 2. Use useEffect to update localStorage whenever the 'page' state changes
-  useEffect(() => {
-    localStorage.setItem("ozed_current_page", page);
-  }, [page]);
-
   return (
-    <>
-      <Navbar onNavigate={setPage} currentPage={page} />
-      
-      {/* Main Content Areas */}
+    <Router>
+      <Navbar /> 
       <main className="min-h-screen">
-        {page === "home" && <Hero onNavigate={setPage} />}
-        {page === "about" && <AboutUs />}
-        {page === "service" && <Service />}
-        {page === "contact" && <ContactPage />}
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/contact" element={<ContactPage />} />
+          {/* Fallback for 404s */}
+          <Route path="*" element={<Hero />} />
+        </Routes>
       </main>
-    </>
+    </Router>
   );
 }
 
