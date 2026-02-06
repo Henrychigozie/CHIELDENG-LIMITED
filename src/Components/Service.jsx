@@ -27,28 +27,28 @@ const Service = ({ onNavigate }) => {
       icon: <Home className="w-8 h-8" />,
     },
     {
-      title: "End of Tenancy Clean",
+      title: "End of Tenancy",
       desc: "Thorough cleaning to help tenants get their deposit back and prepare properties for new occupants.",
       icon: <Key className="w-8 h-8" />,
     },
     {
-      title: "Kitchen Deep Clean",
-      desc: "Intensive kitchen cleaning including appliances, cabinets, countertops, and hard-to-reach areas.",
+      title: "Commercial Cleaning",
+      desc: "Professional cleaning solutions for offices and workspaces to maintain a hygienic and productive environment.",
       icon: <Utensils className="w-8 h-8" />,
     },
     {
-      title: "Bathroom Deep Clean",
-      desc: "Complete bathroom sanitization including tiles, grout, fixtures, and all surfaces for a hygienic finish.",
+      title: "Oven / Kitchen Special",
+      desc: "Targeted deep cleaning for kitchen appliances and surfaces, removing stubborn grease and grime.",
       icon: <Bath className="w-8 h-8" />,
     },
   ];
 
   const priceList = [
-    { item: "Single Room Deep Clean", price: "£30" },
-    { item: "Kitchen Deep Clean", price: "£50 - £80" },
-    { item: "Bathroom Deep Clean", price: "£40 - £60" },
-    { item: "End of Tenancy Clean", price: "Based on Size" },
-    { item: "Entire Property", price: "Custom Quote" },
+    { item: "Residential Deep Clean", price: "£25 - £30 (Per Room)" },
+    { item: "Oven / Kitchen Special", price: "£50 - £80" },
+    { item: "End of Tenancy", price: "From £120" },
+    { item: "Commercial Cleaning", price: "Custom Quote" },
+    { item: "Full Property Deep Clean", price: "Competitive Rates" },
   ];
 
   return (
@@ -107,8 +107,6 @@ const Service = ({ onNavigate }) => {
 
       <FooterSection/>
     </div>
-
-
   );
 };
 

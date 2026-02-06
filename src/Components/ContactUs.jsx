@@ -69,7 +69,7 @@ const ContactPage = () => {
                   <span className="text-[#56ab2f] italic">living space.</span>
                 </h1>
                 <p className="text-lg text-slate-300 max-w-md leading-relaxed">
-                  Bespoke cleaning solutions for Bexley's finest homes. Experience the Ozed difference today.
+                  Bespoke cleaning solutions for London's finest homes. Experience the Ozed difference today.
                 </p>
               </div>
 
@@ -217,7 +217,9 @@ const ContactPage = () => {
               <MapPin className="text-[#56ab2f]" />
               <div>
                 <p className="text-[10px] font-black uppercase text-slate-400 tracking-tighter">Primary Area</p>
-                <p className="font-bold text-slate-900">Bexley & Greater London</p>
+                <p className="font-bold text-slate-900">London 
+                  
+                & Greater London</p>
               </div>
             </div>
           </div>

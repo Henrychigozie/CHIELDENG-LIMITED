@@ -62,7 +62,7 @@ const FooterSection = () => {
         </div>
       </div>
               <p className="text-slate-400 leading-relaxed text-sm md:text-base">
-                The gold standard for residential and commercial deep cleaning in Bexley. We don't just clean—we restore.
+                The gold standard for residential and commercial deep cleaning in London. We don't just clean—we restore.
               </p>
               <div className="flex gap-4">
                 {[
@@ -126,7 +126,7 @@ const FooterSection = () => {
                 </a>
                 <div className="flex items-start gap-3 text-sm">
                   <MapPin className="text-slate-500" size={18} />
-                  <span className="text-slate-300">Bexley, Greater London</span>
+                  <span className="text-slate-300">London, Greater London</span>
                 </div>
                 <button 
                   onClick={scrollToTop}
@@ -144,6 +144,9 @@ const FooterSection = () => {
             <div className="flex flex-col items-center md:items-start gap-2">
               <p className="text-slate-500 text-[11px] font-medium uppercase tracking-wider">
                 © {new Date().getFullYear()} Ozed Services. All rights reserved.
+              </p>
+              <p className="text-slate-400 text-[10px] font-medium uppercase tracking-wider">
+                Ozed Cleaning Services is a trading name of CHIELDENG LIMITED. Registered in England & Wales. Company No. 13824032
               </p>
               <div className="flex gap-6 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
                 <span className="hover:text-[#56ab2f] cursor-pointer transition-colors">Privacy Policy</span>
