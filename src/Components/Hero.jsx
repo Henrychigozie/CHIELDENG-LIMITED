@@ -152,8 +152,8 @@ const Hero = () => {
               })}
             </div>
             <div>
-              <p className="font-bold text-[#0b0642] text-xs md:text-sm leading-tight">{badge.label}</p>
-              <p className="text-[10px] text-slate-500 uppercase italic mt-0.5">
+              <p className="font-bold text-[#0b0642] text-[14px] leading-tight">{badge.label}</p>
+              <p className="text-[12px] text-slate-500 uppercase italic mt-0.5">
                 {badge.desc}
               </p>
             </div>
