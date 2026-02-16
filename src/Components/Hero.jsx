@@ -74,29 +74,40 @@ const Hero = () => {
       {/* HERO SECTION */}
     <main className="relative overflow-hidden bg-slate-100">
   <div className="absolute inset-0 z-0">
-    <img
-      src={heroimage}
-      alt="Professional cleaning service"
-      onLoad={() => setImageLoaded(true)}
-      className={`w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-        imageLoaded ? "opacity-100" : "opacity-0"
-      }`}
-    />
-  </div>
+  <img
+    src={heroimage}
+    alt="Professional cleaning service"
+    onLoad={() => setImageLoaded(true)}
+    className={`w-full h-full object-cover object-left transition-opacity duration-1000 ease-in-out ${
+      imageLoaded ? "opacity-100" : "opacity-0"
+    }`}
+  />
 
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center">
+  {/* --- Overlay Layer --- */}
+  {/* This creates a fade from the left (solid) to the right (transparent) */}
+  <div 
+    className={`absolute inset-0 transition-opacity duration-1000 bg-linear-to-r from-slate-100 via-slate-100/60 to-transparent md:w-2/3 ${
+      imageLoaded ? "opacity-100" : "opacity-0"
+    }`} 
+  />
+  
+  {/* Optional: A very subtle dark tint for mobile only to help white badges stand out */}
+  <div className="absolute inset-0 bg-[#0b0642]/5 md:hidden" />
+</div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20  md:min-h-[80vh] lg:min-h-screen flex items-center">
     {/* Constraining width to md:w-5/12 ensures the text doesn't cover the right side of the image */}
     <div className="w-full md:w-5/12 space-y-4 md:space-y-6 text-center md:text-left">
       
       {/* Reduced H1: 4xl/5xl -> 3xl/4xl */}
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b0642] leading-tight">
+      <h1 className="text-3xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b0642] leading-tight">
         Expert Cleaning Services in London
       </h1>
 
       {/* Reduced Pricing: 3xl/5xl -> xl/3xl */}
       <p className="text-lg sm:text-xl text-[#0b0642e5] font-semibold">
         Starting from{" "}
-        <span className="text-[#56ab2f] text-2xl sm:text-3xl lg:text-4xl font-bold">
+        <span className="text-[#56ab2f] text-3xl sm:text-3xl lg:text-4xl font-bold">
           £25 - £30
         </span>{" "}
         <span className="text-sm font-medium">Per Room</span>
@@ -134,7 +145,7 @@ const Hero = () => {
         ].map((badge, index) => (
           <div key={index} className="flex items-start gap-2.5">
             {/* Reduced icon box: w-11 -> w-8 */}
-            <div className="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-[#56ab2f]">
+            <div className="w-9 h-9 rounded-lg bg-white shadow-sm flex items-center justify-center text-[#56ab2f]">
               {React.cloneElement(badge.icon, {
                 size: 16, // Reduced icon size: 22 -> 16
                 strokeWidth: 2.5,
