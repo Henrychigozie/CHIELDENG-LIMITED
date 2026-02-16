@@ -78,7 +78,7 @@ const Hero = () => {
     src={heroimage}
     alt="Professional cleaning service"
     onLoad={() => setImageLoaded(true)}
-    className={`w-full h-full object-cover object-left transition-opacity duration-1000 ease-in-out ${
+    className={`w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
       imageLoaded ? "opacity-100" : "opacity-0"
     }`}
   />
@@ -95,7 +95,7 @@ const Hero = () => {
   <div className="absolute inset-0 bg-[#0b0642]/5 md:hidden" />
 </div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20  md:min-h-[80vh] lg:min-h-screen flex items-center">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center">
     {/* Constraining width to md:w-5/12 ensures the text doesn't cover the right side of the image */}
     <div className="w-full md:w-5/12 space-y-4 md:space-y-6 text-center md:text-left">
       
@@ -125,7 +125,7 @@ const Hero = () => {
       </div>
 
       {/* Compact Badges: smaller icons and text sizes */}
-      <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
+      <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-6 md:gap-6">
         {[
           {
             icon: <ShieldCheck />,
@@ -143,7 +143,7 @@ const Hero = () => {
             desc: "DBS Checked & Vetted",
           },
         ].map((badge, index) => (
-          <div key={index} className="flex items-start gap-2.5">
+          <div key={index} className="flex items-start gap-3">
             {/* Reduced icon box: w-11 -> w-8 */}
             <div className="w-9 h-9 rounded-lg bg-white shadow-sm flex items-center justify-center text-[#56ab2f]">
               {React.cloneElement(badge.icon, {
