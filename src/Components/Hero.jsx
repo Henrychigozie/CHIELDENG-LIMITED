@@ -88,7 +88,7 @@ const Hero = () => {
 
 
   {/* Content - Constrained width to clear the right side */}
-  <div className="relative h-full z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
 
     {/* Reduced width to md:w-5/12 and reduced space-y */}
     <div className="w-full md:w-5/12 space-y-4 md:space-y-6 text-center md:text-left">
