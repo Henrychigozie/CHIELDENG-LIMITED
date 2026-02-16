@@ -67,53 +67,63 @@ const Hero = () => {
       {/* Banner */}
       <div className="bg-[#00245B] py-4 px-6 flex justify-center items-center max-md:text-center">
         <p className="text-white text-sm md:text-base font-normal tracking-wide">
-         Special Offer Available! Get Amazing Discount on deep cleaning, Move-In/Move-Out cleaning. Book today and secure your deal!
+          Special Offer Available! Get Amazing Discount on deep cleaning,
+          Move-In/Move-Out cleaning. Book today and secure your deal!
         </p>
       </div>
       {/* HERO SECTION */}
-<main className="relative overflow-hidden bg-slate-100 w-full">
-  <div className="absolute inset-0 z-0">
+ <main className="relative overflow-hidden bg-slate-100 h-screen w-full">
+
+  {/* Background Image - Set to object-right */}
+  <div className="absolute inset-0 z-0 h-screen">
     <img
       src={heroimage}
       alt="Professional cleaning service"
       onLoad={() => setImageLoaded(true)}
-      className={`w-full h-full object-right transition-opacity duration-1000 ease-in-out ${
+      className={`w-full h-full object-cover object-left transition-opacity duration-1000 ease-in-out ${
         imageLoaded ? "opacity-100" : "opacity-0"
       }`}
     />
   </div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center">
-    {/* Setting width to md:w-5/12 keeps the text on the left, "shifting" the image view to the right */}
+
+  {/* Content - Constrained width to clear the right side */}
+  <div className="relative h-full z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center">
+
+    {/* Reduced width to md:w-5/12 and reduced space-y */}
     <div className="w-full md:w-5/12 space-y-4 md:space-y-6 text-center md:text-left">
-      
-      {/* Title: Reduced to text-3xl for a more balanced look */}
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b0642] leading-tight">
+
+      {/* Reduced font size: text-3xl / lg:text-4xl */}
+      <h1 className="text-3xl lg:text-4xl font-extrabold text-[#0b0642] leading-tight">
         Expert Cleaning Services in London
       </h1>
 
-      {/* Pricing: Scaled down to keep it punchy but not overwhelming */}
-      <p className="text-lg sm:text-xl text-[#0b0642e5] font-semibold">
+      {/* Reduced font size: text-xl / lg:text-2xl */}
+      <p className="text-xl lg:text-2xl text-[#0b0642e5] font-semibold">
         Starting from{" "}
-        <span className="text-[#56ab2f] text-2xl sm:text-3xl font-bold">
+        <span className="text-[#56ab2f] text-3xl lg:text-4xl font-bold">
           £25 - £30
         </span>{" "}
         <span className="text-sm md:text-base">Per Room</span>
       </p>
 
-      {/* Subtext: Reduced to text-sm/base */}
+      {/* Reduced font size: text-base */}
       <p className="text-sm md:text-base text-[#0b0642d0] font-medium italic">
         Professional & Reliable Cleaning for Your Home
       </p>
 
+
+      {/* Button - Slightly more compact padding */}
       <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
-        <button className="bg-linear-to-t from-[#1c4b77] to-[#23486a] text-white px-6 py-2.5 rounded-lg font-bold text-sm md:text-base shadow-lg transition active:scale-95 hover:brightness-140 ">
+        <button className="bg-linear-to-t from-[#1c4b77] to-[#23486a] text-white px-7 py-2.5 rounded-lg font-bold text-base shadow-lg transition active:scale-95 hover:brightness-125 hover:scale-105">
           Book a Cleaning
         </button>
       </div>
 
-      {/* Badges: Compacted font and icon sizing */}
-      <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
+
+      {/* Badges - More compact spacing and icons */}
+      <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-5">
+
         {[
           {
             icon: <ShieldCheck />,
@@ -131,25 +141,39 @@ const Hero = () => {
             desc: "DBS Checked & Vetted",
           },
         ].map((badge, index) => (
-          <div key={index} className="flex items-start gap-2">
-            <div className="w-8 h-8 rounded-lg bg-white shadow flex items-center justify-center text-[#56ab2f]">
+
+          <div key={index} className="flex items-start gap-2.5">
+
+            {/* Reduced container size from w-11 to w-9 */}
+            <div className="w-9 h-9 rounded-lg bg-white shadow-sm flex items-center justify-center text-[#56ab2f]">
               {React.cloneElement(badge.icon, {
-                size: 16, 
+                size: 18, // Reduced icon size
                 strokeWidth: 2.5,
               })}
             </div>
+
+
             <div>
-              <p className="font-bold text-[#0b0642] text-xs md:text-sm">{badge.label}</p>
-              <p className="text-[9px] md:text-[10px] text-slate-500 uppercase italic">
+              <p className="font-bold text-[#0b0642] text-sm leading-tight">
+                {badge.label}
+              </p>
+              <p className="text-[10px] text-slate-500 uppercase italic">
                 {badge.desc}
               </p>
             </div>
+
           </div>
+
         ))}
+
       </div>
+
     </div>
+
   </div>
+
 </main>
+
 
       {/* ABOUT TEASER */}
       <section className="py-16 md:py-24 bg-gray-50">
