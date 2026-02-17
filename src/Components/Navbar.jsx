@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Mail, Menu, X, Phone } from "lucide-react";
+import Logo from "../assets/logo1.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,19 +25,18 @@ const Navbar = () => {
       {/* Logo Section */}
       <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
         <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-[#56ab2f] blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full" />
-          <div className="relative bg-linear-to-br from-[#56ab2f] to-[#4a9328] p-1.5 sm:p-2 rounded-xl shadow-sm group-hover:shadow-emerald-200 group-hover:-rotate-12 transition-all duration-500 ease-out">
-            <div className="border-[2.5px] border-white w-4 h-4 sm:w-5 sm:h-5 rounded-md flex items-center justify-center">
-              <div className="bg-white w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full animate-pulse" />
-            </div>
-          </div>
+          <img
+            src={Logo}
+            alt="Chieldeng Logo"
+            className="w-13 h-13 object-cover group-hover:border-[#4a9328] transition-colors duration-300"
+          />
         </div>
 
         <div className="flex flex-col">
           <div className="flex items-center">
             <NavLink
               to="/"
-              className="text-[#2d5a84] font-black text-xl sm:text-2xl tracking-[calc(-0.05em)] leading-none group-hover:text-[#56ab2f] transition-colors duration-300"
+              className="text-[#2d5a84] font-black text-xl sm:text-2xl tracking-[calc(-0.05em)] leading-none group-hover:text-[#56ab2f] transition-colors duration-300 max-sm:text-[15px]"
             >
               CHIELDENG LIMITED
             </NavLink>
@@ -111,7 +111,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={28} /> : <Menu size={20} />}
         </button>
       </div>
 

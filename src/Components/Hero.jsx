@@ -15,6 +15,7 @@ import {
 
 import FooterSection from "../Components/footer";
 import heroimage from "../assets/image002.png";
+
 // import heroimage from "../assets/housewife-young-smiling-woman-with-basin-with-cleansing-appliances.jpg";
 const Hero = () => {
   // 1. STATE FOR DROPDOWN AND IMAGE LOADING
@@ -24,10 +25,10 @@ const Hero = () => {
 
   // UPDATED SERVICE LIST
   const services = [
-    "Residential Clean",
-    "End of Tenancy",
-    "Commercial Cleaning",
-    "Oven / Kitchen Special",
+  
+    "Standard Cleaning",
+    "Deep Cleaning",
+    "Move-In/Move-Out Cleaning",
   ];
 
   useEffect(() => {
@@ -125,41 +126,7 @@ const Hero = () => {
       </div>
 
       {/* Compact Badges: smaller icons and text sizes */}
-      <div className="pt-6 flex flex-wrap justify-center md:justify-start gap-6 md:gap-6">
-        {[
-          {
-            icon: <ShieldCheck />,
-            label: "Fully Insured",
-            desc: "£5m Public Liability",
-          },
-          {
-            icon: <Star />,
-            label: "Top Rated",
-            desc: "4.9/5 Average Rating",
-          },
-          {
-            icon: <ThumbsUp />,
-            label: "Expert Staff",
-            desc: "DBS Checked & Vetted",
-          },
-        ].map((badge, index) => (
-          <div key={index} className="flex items-start gap-3">
-            {/* Reduced icon box: w-11 -> w-8 */}
-            <div className="w-9 h-9 rounded-lg bg-white shadow-sm flex items-center justify-center text-[#56ab2f]">
-              {React.cloneElement(badge.icon, {
-                size: 16, // Reduced icon size: 22 -> 16
-                strokeWidth: 2.5,
-              })}
-            </div>
-            <div>
-              <p className="font-bold text-[#0b0642] text-[14px] leading-tight">{badge.label}</p>
-              <p className="text-[12px] text-slate-800 uppercase italic mt-0.5">
-                {badge.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+    
     </div>
   </div>
 </main>
@@ -230,14 +197,14 @@ const Hero = () => {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
-              { title: "End of Tenancy", icon: <Key size={24} />, deal: false },
+              { title: "Standard Cleaning", icon: <Key size={24} />, deal: false },
               {
-                title: "Commercial Cleaning",
+                title: "Deep Cleaning",
                 icon: <Utensils size={24} />,
                 deal: false,
               },
               {
-                title: "Oven / Kitchen Special",
+                title: "Move-In/Move-Out Cleaning",
                 icon: <Bath size={24} />,
                 deal: true,
               },
@@ -380,7 +347,7 @@ const Hero = () => {
                 hook: "The 'CHIELDENG LIMITED Glow' is real.",
                 quote:
                   "I’ve used dozens of services for my rentals, but these are the first people who actually move the furniture.",
-                tags: "End of Tenancy",
+                tags: "Standard Cleaning",
               },
               {
                 name: "Elena Rodriguez",
