@@ -274,7 +274,7 @@ const Hero = () => {
                     ))}
                   </ul>
                   <Link 
-                    to="/contact" 
+                    to="#"
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     className="flex items-center justify-center gap-2 w-full py-3 bg-[#0b0642] hover:bg-[#1c4b77] text-white rounded-xl text-sm font-bold transition-all"
                   >
