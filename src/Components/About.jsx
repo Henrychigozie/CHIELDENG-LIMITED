@@ -31,7 +31,7 @@ const AboutUs = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-4">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-            About <span className="text-[#56ab2f]">CHIELDENG </span> Cleaning Service
+            About <span className="text-[#56ab2f]">CHIELDENG </span> Cleaning Service - The best cleaning service in London
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto italic font-light">
             Redefining clean for refined homes in London.
