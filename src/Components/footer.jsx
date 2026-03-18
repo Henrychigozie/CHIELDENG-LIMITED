@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../assets/WhatsApp_Image_2026-03-17_at_8.54.45_PM-removebg-preview.png";
 import { 
   Facebook, 
   Instagram, 
@@ -33,15 +34,13 @@ const FooterSection = () => {
             {/* Brand Column */}
             <div className="space-y-8">
              <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
-        <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-[#56ab2f] blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full" />
-
-          <div className="relative bg-linear-to-br from-[#56ab2f] to-[#4a9328] p-1.5 sm:p-2 rounded-xl shadow-sm group-hover:shadow-emerald-200 group-hover:-rotate-12 transition-all duration-500 ease-out">
-            <div className="border-[2.5px] border-white w-4 h-4 sm:w-5 sm:h-5 rounded-md flex items-center justify-center">
-              <div className="bg-white w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full animate-pulse" />
-            </div>
-          </div>
-        </div>
+       <div className="relative flex items-center justify-center">
+                <img
+                  src={Logo}
+                  alt="Chieldeng Logo"
+                  className="w-12 h-12 object-cover group-hover:border-[#4a9328] transition-colors duration-300"
+                />
+              </div>
 
         <div className="flex flex-col">
           <div className="flex items-center">
@@ -49,7 +48,7 @@ const FooterSection = () => {
               onClick={() => handleNavigate("home")}
               className="text-[#2d5a84] font-black text-[19px]  tracking-[calc(-0.05em)] leading-none group-hover:text-[#56ab2f] transition-colors duration-300"
             >
-              CHIELDENG CLEANING SERVICE
+              CHIELDENG 
             </button>
             <span className="w-1.5 h-1.5 bg-[#56ab2f] rounded-full ml-0.5 mt-1.5 sm:mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100" />
           </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Mail, Menu, X, Phone } from "lucide-react";
-import Logo from "../assets/Chieldeng Logos-01.png";
+import Logo from "../assets/WhatsApp_Image_2026-03-17_at_8.54.45_PM-removebg-preview.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
-import { Home, Sparkles, Key, CheckCircle2, Calculator, CalendarCheck } from "lucide-react";
-import FooterSection from "../Components/footer";
 import { Link } from "react-router-dom";
+import FooterSection from "../Components/footer";
+import { MdEventAvailable, MdCheckCircle, MdCalculate } from "react-icons/md";
+import magic from "../assets/time.png";
+import vaccum from "../assets/vaccum-cleaner.png";
+import rental from "../assets/rental.png";
 
 const Service = ({ onNavigate }) => {
   useEffect(() => {
@@ -31,7 +34,7 @@ const Service = ({ onNavigate }) => {
         "Trash removal",
         "Interior window cleaning"
       ],
-      icon: <Home className="w-8 h-8" />,
+      img: magic,
     },
     {
       title: "Deep Cleaning",
@@ -41,7 +44,7 @@ const Service = ({ onNavigate }) => {
         "Hard-to-reach areas",
         "Post-construction cleaning"
       ],
-      icon: <Sparkles className="w-8 h-8" />,
+      img: vaccum,
     },
     {
       title: "Move-In/Move-Out Cleaning",
@@ -53,7 +56,7 @@ const Service = ({ onNavigate }) => {
         "Wall spot cleaning",
         "Appliances interior cleaning"
       ],
-      icon: <Key className="w-8 h-8" />,
+      img: rental,
     },
   ];
 
@@ -82,8 +85,10 @@ const Service = ({ onNavigate }) => {
               >
                 <div>
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#56ab2f] mb-6 group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
+                      {service.img ? (
+                        <img src={service.img} alt={service.title} className="w-10 h-10 object-contain" />
+                      ) : null}
+                    </div>
                   <h4 className="text-xl font-bold text-[#0b0642] mb-3">{service.title}</h4>
                   <ul className="text-gray-600 space-y-2 mb-8">
                     {service.desc.map((item, i) => (
@@ -100,7 +105,7 @@ const Service = ({ onNavigate }) => {
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   className="w-full py-3 px-4 bg-white border-2 border-[#56ab2f] text-[#56ab2f] rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#56ab2f] hover:text-white transition-all duration-300"
                 >
-                  <CalendarCheck size={18} />
+                  <MdEventAvailable size={18} />
                   Book a Service
                 </Link>
               </div>
