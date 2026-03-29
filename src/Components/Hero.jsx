@@ -12,9 +12,7 @@ import {
   MdEventAvailable,
 } from "react-icons/md";
 
-import vaccum from "../assets/vaccum-cleaner.png";
-import magic from "../assets/time.png";
-import rental from "../assets/rental.png";
+// Service images replaced with Unsplash URLs (served remotely)
 import FooterSection from "../Components/footer";
 import heroimage from "../assets/image002.png";
 
@@ -31,7 +29,7 @@ const Hero = () => {
     {
       title: "Standard Cleaning",
       icon: <MdCleaningServices size={24} />,
-      img: magic,
+      img: "https://plus.unsplash.com/premium_photo-1679920026812-d9b1ec223018?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: [
         "Dusting and surface wiping",
         "Sweeping, mopping, vacuuming",
@@ -44,7 +42,7 @@ const Hero = () => {
     {
       title: "Deep Cleaning",
       icon: <MdCleaningServices size={24} />,
-      img: vaccum,
+      img: "https://plus.unsplash.com/premium_photo-1733306538480-f0d59b6edadf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: [
         "Intensive kitchen and Bathroom scrubbing",
         "Baseboards and door frames",
@@ -56,7 +54,7 @@ const Hero = () => {
     {
       title: "Move-In/Move-Out Cleaning",
       icon: <MdHomeRepairService size={24} />,
-      img: rental,
+      img: "https://plus.unsplash.com/premium_photo-1726869777151-5f15071f2c77?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: [
         "Full room cleaning",
         "Cabinets and closets",
@@ -293,12 +291,22 @@ const Hero = () => {
                   className="p-8 flex items-center gap-4 cursor-pointer hover:bg-slate-50/50 transition-colors relative"
                 >
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${expandedService === service.title ? "bg-[#56ab2f] text-white" : "bg-slate-50 text-[#2d5a84]"}`}
+                    className={`w-28 h-19 object-cover rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 ${
+                      expandedService === service.title
+                        ? "ring-2 ring-[#56ab2f]"
+                        : "bg-slate-50 text-[#2d5a84]"
+                    }`}
                   >
                     {service.img ? (
-                      <img src={service.img} alt={service.title} className="w-6 h-6 object-contain" />
+                      <img
+                        src={service.img}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     ) : (
-                      service.icon
+                      <div className="p-1 flex items-center justify-center">
+                        {service.icon}
+                      </div>
                     )}
                   </div>
                   <div className="flex flex-col">

@@ -3,7 +3,7 @@ import React from "react";
 const FloatingWhatsAppButton = () => {
   const handleWhatsAppAction = () => {
     // Replace with your phone number in international format (no + or spaces)
-    const phoneNumber = "234XXXXXXXXXX"; 
+    const phoneNumber = "447867045156";
     const message = encodeURIComponent("Hello! I'd like to make an inquiry.");
     window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
   };

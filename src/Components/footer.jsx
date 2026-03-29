@@ -85,7 +85,7 @@ const FooterSection = () => {
             <div className="space-y-6">
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[#56ab2f]">Services</h4>
               <ul className="space-y-4 text-slate-300 font-medium">
-                {[ 'End of Tenancy', 'Kitchen Specialist', 'Office Cleaning'].map((item) => (
+                {[ 'Standard Cleaning', 'Deep Cleaning', 'Move-In/Move-Out Cleaning'].map((item) => (
                   <li key={item} className="flex items-center group cursor-pointer hover:text-white transition-colors text-sm">
                     <ExternalLink size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-all -ml-5 group-hover:ml-0 text-[#56ab2f]" />
                     {item}

@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
 import AboutUs from "./Components/About.jsx";
 import Service from "./Components/Service.jsx";
-// import ContactPage from "./Components/ContactUs.jsx";
+import Contact from "./Components/Contact.jsx";
 import BookingPage from "./Components/BookingPage.jsx";
 import FloatingCallButton from "./Components/FloatingWhatsAppButton.jsx";
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/service" element={<Service />} />
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
+          <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<BookingPage />} />
           {/* Fallback for 404s */}
           <Route path="*" element={<Hero />} />
