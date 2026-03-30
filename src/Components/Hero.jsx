@@ -178,7 +178,7 @@ const Hero = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="bg-linear-to-t from-[#1c4b77] to-[#23486a] text-white px-8 py-3 rounded-xl font-bold text-sm md:text-base shadow-lg transition active:scale-95 hover:brightness-110 text-center"
               >
-                Book a Cleaning
+                Get a free quote
               </Link>
               <Link
                 to="/service"
