@@ -121,7 +121,7 @@ const FooterSection = () => {
               <div className="space-y-5">
                 <a href="mailto:hello@CHIELDENG LIMITEDservices.co.uk" className="flex items-start gap-3 group text-sm">
                   <Mail className="text-slate-500 group-hover:text-[#56ab2f] transition-colors" size={18} />
-                  <span className="text-slate-300 group-hover:text-white transition-colors truncate">hello@CHIELDENG Cleaning services.co.uk</span>
+                  <span className="text-slate-300 group-hover:text-white transition-colors truncate">Chieldengservices@gmail.com</span>
                 </a>
                 <div className="flex items-start gap-3 text-sm">
                   <MapPin className="text-slate-500" size={18} />
