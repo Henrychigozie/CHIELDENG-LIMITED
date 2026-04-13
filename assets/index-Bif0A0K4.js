@@ -13,7 +13,7 @@ Please change the parent <Route path="${q}"> to <Route path="${q==="/"?"*":`${q}
 
 From: ${i||""} (${d||""})
 Phone: ${m||""}
-Address: ${b||""}`,X="hello@chieldeng.com",K="Chieldengservices@gmail.com";window.location.href=`mailto:${X}?cc=${encodeURIComponent(K)}&subject=${encodeURIComponent(V)}&body=${encodeURIComponent(G)}`},U=H=>{H.preventDefault();const V=`Hello, my name is ${i||"a visitor"}.
+Address: ${b||""}`,X="Chieldengservices@gmail.com";window.location.href=`mailto:${X}?cc=${encodeURIComponent}&subject=${encodeURIComponent(V)}&body=${encodeURIComponent(G)}`},U=H=>{H.preventDefault();const V=`Hello, my name is ${i||"a visitor"}.
 
 ${E}
 
