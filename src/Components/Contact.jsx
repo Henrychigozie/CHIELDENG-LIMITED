@@ -15,11 +15,9 @@ const Contact = () => {
     e.preventDefault();
     const subject = `Website enquiry from ${name || "visitor"}`;
     const body = `${message}\n\nFrom: ${name || ""} (${email || ""})\nPhone: ${phone || ""}\nAddress: ${address || ""}`;
-    const mailTo = "hello@chieldeng.com";
-    const mailCc = "Chieldengservices@gmail.com";
-    window.location.href = `mailto:${mailTo}?cc=${encodeURIComponent(
-      mailCc,
-    )}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const mailTo = "Chieldengservices@gmail.com";
+    window.location.href = `mailto:${mailTo}?cc=${encodeURIComponent}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSendWhatsApp = (e) => {
@@ -110,10 +108,7 @@ const Contact = () => {
                 />
               </label>
 
-        
               <div className="flex flex-col sm:flex-row gap-3">
-
-                
                 <button
                   onClick={handleSendWhatsApp}
                   className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#25D366] text-white font-semibold hover:opacity-95 transition"
@@ -129,7 +124,6 @@ const Contact = () => {
                   <Mail size={16} />
                   Send Email
                 </button>
-
               </div>
             </form>
           </div>
