@@ -171,7 +171,7 @@ const Navbar = () => {
 
           <div className="w-full flex flex-col sm:flex-row gap-3 mt-4">
             <a
-              href="tel:01234567890"
+              href="tel:+447867045156"
               onClick={() => setIsOpen(false)}
               className="flex-1 inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#2d5a84] font-bold hover:bg-slate-100 transition"
             >
