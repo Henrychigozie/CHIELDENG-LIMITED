@@ -114,6 +114,15 @@ const Navbar = () => {
         >
           Book Now
         </NavLink>
+
+        <a
+          href="tel:+447867045156"
+          onClick={() => setIsOpen(false)}
+          className="flex-1 inline-flex justify-center items-center px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#2d5a84] font-bold hover:bg-slate-100 transition text-[12px]"
+        >
+          <Phone size={18} className="mr-3" />
+          Call Now
+        </a>
         <button
           className="text-slate-700 focus:outline-none transition-transform active:scale-95"
           onClick={() => setIsOpen(!isOpen)}
@@ -170,14 +179,14 @@ const Navbar = () => {
           </NavLink>
 
           <div className="w-full flex flex-col sm:flex-row gap-3 mt-4">
-            <a
+            {/* <a
               href="tel:+447867045156"
               onClick={() => setIsOpen(false)}
               className="flex-1 inline-flex justify-center items-center px-6 py-3 rounded-xl bg-slate-50 border border-slate-200 text-[#2d5a84] font-bold hover:bg-slate-100 transition"
             >
               <Phone size={18} className="mr-3" />
               Call Now
-            </a>
+            </a> */}
             <NavLink
               target="_blank"
               to="https://chieldenglimited.bookingkoala.com/booknow"
