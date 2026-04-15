@@ -95,7 +95,7 @@ const Navbar = () => {
           </a>
           <NavLink
             target="_blank"
-            to="https://chieldenglimited.bookingkoala.com/booknow"
+            to="mailto:chieldengservices@gmail.com"
             className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-linear-to-t from-[#2c700d] to-[#4a9328] hover:from-[#4a9328] hover:to-[#3c7a20] transition whitespace-nowrap"
           >
             Book a Service
@@ -180,7 +180,7 @@ const Navbar = () => {
             </a>
             <NavLink
               target="_blank"
-              to="https://chieldenglimited.bookingkoala.com/booknow"
+              to="mailto:chieldengservices@gmail.com"
               onClick={() => setIsOpen(false)}
               className="flex-1 inline-flex justify-center items-center px-6 py-3 rounded-xl bg-[#56ab2f] text-white font-bold shadow-lg shadow-emerald-200/50 hover:opacity-90 transition"
             >

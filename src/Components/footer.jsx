@@ -1,15 +1,15 @@
 import React from "react";
 import Logo from "../assets/WhatsApp_Image_2026-03-17_at_8.54.45_PM-removebg-preview.png";
-import { 
-  Facebook, 
-  Instagram, 
-  Twitter, 
-  Mail, 
-  MapPin, 
-  Clock, 
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Mail,
+  MapPin,
+  Clock,
   ExternalLink,
   ShieldCheck,
-  ChevronUp 
+  ChevronUp
 } from "lucide-react";
 
 const FooterSection = () => {
@@ -21,16 +21,16 @@ const FooterSection = () => {
     <section className="relative w-full">
       {/* Footer Wrapper */}
       <footer className="bg-[#07042b] text-white pt-24 pb-12 relative overflow-hidden">
-        
+
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#56ab2f]/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          
+
           {/* Main Footer Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/5">
-            
+
             {/* Brand Column */}
             <div className="space-y-8">
              <div className="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0">
@@ -48,7 +48,7 @@ const FooterSection = () => {
               onClick={() => handleNavigate("home")}
               className="text-[#2d5a84] font-black text-[19px]  tracking-[calc(-0.05em)] leading-none group-hover:text-[#56ab2f] transition-colors duration-300"
             >
-              CHIELDENG 
+              CHIELDENG
             </button>
             <span className="w-1.5 h-1.5 bg-[#56ab2f] rounded-full ml-0.5 mt-1.5 sm:mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100" />
           </div>
@@ -69,9 +69,9 @@ const FooterSection = () => {
                   { icon: <Instagram size={18} />, link: "#", label: "Instagram" },
                   { icon: <Twitter size={18} />, link: "#", label: "Twitter" }
                 ].map((social, i) => (
-                  <a 
-                    key={i} 
-                    href={social.link} 
+                  <a
+                    key={i}
+                    href={social.link}
                     aria-label={social.label}
                     className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-[#56ab2f] hover:text-white transition-all duration-300 border border-white/10"
                   >
@@ -119,7 +119,7 @@ const FooterSection = () => {
             <div className="space-y-6">
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[#56ab2f]">Connect</h4>
               <div className="space-y-5">
-                <a href="mailto:hello@CHIELDENG LIMITEDservices.co.uk" className="flex items-start gap-3 group text-sm">
+                <a href="mailto:chieldengservices@gmail.com" target="_blank" className="flex items-start gap-3 group text-sm">
                   <Mail className="text-slate-500 group-hover:text-[#56ab2f] transition-colors" size={18} />
                   <span className="text-slate-300 group-hover:text-white transition-colors truncate">Chieldengservices@gmail.com</span>
                 </a>
@@ -127,7 +127,7 @@ const FooterSection = () => {
                   <MapPin className="text-slate-500" size={18} />
                   <span className="text-slate-300">London, Greater London</span>
                 </div>
-                <button 
+                <button
                   onClick={scrollToTop}
                   className="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors group"
                 >
@@ -152,7 +152,7 @@ const FooterSection = () => {
                 <span className="hover:text-[#56ab2f] cursor-pointer transition-colors">Terms of Work</span>
               </div>
             </div>
-            
+
             <div className="hidden lg:block px-6 py-2 rounded-full border border-white/5 bg-white/[0.02] text-[10px] text-slate-500 font-bold uppercase tracking-[0.4em]">
               Precision • Purity • Professionalism
             </div>
