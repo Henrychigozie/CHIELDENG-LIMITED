@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FooterSection from "../Components/footer";
-import { MdEventAvailable, MdCheckCircle, MdCalculate } from "react-icons/md";
+import { MdEventAvailable} from "react-icons/md";
 
 const Service = ({ onNavigate }) => {
   useEffect(() => {
@@ -149,7 +149,7 @@ const Service = ({ onNavigate }) => {
               ))}
             </ul>
 
-            <Link 
+            <Link
               to="/contact"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="w-full mt-10 bg-gradient-to-t from-[#1c4b77] to-[#23486a] text-white py-4 rounded-2xl font-bold text-lg shadow-lg hover:brightness-110 transition flex items-center justify-center gap-2 active:scale-95"
