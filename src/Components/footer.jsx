@@ -119,7 +119,7 @@ const FooterSection = () => {
             <div className="space-y-6">
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-[#56ab2f]">Connect</h4>
               <div className="space-y-5">
-                <a href="mailto:hello@CHIELDENG LIMITEDservices.co.uk" className="flex items-start gap-3 group text-sm">
+                <a href="mailto:hello@Chieldengservices@gmail.com" className="flex items-start gap-3 group text-sm">
                   <Mail className="text-slate-500 group-hover:text-[#56ab2f] transition-colors" size={18} />
                   <span className="text-slate-300 group-hover:text-white transition-colors truncate">Chieldengservices@gmail.com</span>
                 </a>
